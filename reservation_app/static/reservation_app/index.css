@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: ZFJahan;
+    src: url('../fonts/ZFJahan.woff') format('woff'),
+    url('../fonts/ZFJahan.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRNAZANINBOLD;
+    src: url('../fonts/IRNAZANINBOLD.woff') format('woff'),
+    url('../fonts/IRNAZANINBOLD.ttf') format('truetype');
+}
+
+
+.nav-item {
+    display: inline-block;
+    font-family: ZFJahan;
+    font-size: 35px;
+    color: rgb(56, 55, 55);
+    text-decoration: none;
+    border-radius: 20px;
+    margin: 1px;
+    padding: 10px;
+}
+
+.nav-item:hover {
+    color: black;
+    border: 1px solid black;
+    margin: 1px;
+}
+
+li ul {
+    display: inline-block;
+}
+
+li {
+    background: radial-gradient(
+    circle,
+    #fbfbfb8f 80%,
+    #88898900 100%,
+    #14141400 50%
+    );
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    margin: 10px;
+}
+
+h1 {
+    font-family: ZFJahan;
+    font-weight: 200;
+    color: white;
+    padding-right: 15px;
+}
+
+p {
+    font-family: IRNAZANINBOLD;
+    font-size: 25px;
+    line-height: 120%;
+    text-align: justify;
+    max-width: 70%;
+    height: 100%;
+    width: 70%; /* TODO: 25% ? */
+    color: white;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.13);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+p a {
+  color: white;
+}
