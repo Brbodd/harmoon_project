@@ -17,25 +17,26 @@ Harmoon
     <ul><a class='nav-item' href='{% url "Book-Harmoon-Appointment" %}'>رزرو</a></ul>
     <ul><a class='nav-item' href=''>درباره من</a></ul>
 </li>
-
-<button style='margin: 20px; margin-right: 40%;'
-  class="relative cursor-pointer py-4 px-8 text-center font-barlow inline-flex justify-center text-base uppercase text-white rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden">
-  <span class="relative z-20">Reservation</span>
-  <span
-    class="absolute left-[-75%] top-0 h-full w-[50%] bg-white/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"></span>
-  <span
-    class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute h-[20%] rounded-tl-lg border-l-2 border-t-2 top-0 left-0"></span>
-  <span
-    class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute group-hover:h-[90%] h-[60%] rounded-tr-lg border-r-2 border-t-2 top-0 right-0"></span>
-  <span
-    class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute h-[60%] group-hover:h-[90%] rounded-bl-lg border-l-2 border-b-2 left-0 bottom-0"></span>
-  <span
-    class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute h-[20%] rounded-br-lg border-r-2 border-b-2 right-0 bottom-0"></span>
-</button>
+<div class='btn'>
+  <button style='margin: 20px;'
+    class="relative cursor-pointer py-4 px-8 text-center font-barlow inline-flex justify-center text-base uppercase text-white rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden">
+    <span class="relative z-20">Reservation</span>
+    <span
+      class="absolute left-[-75%] top-0 h-full w-[50%] bg-white/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"></span>
+    <span
+      class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute h-[20%] rounded-tl-lg border-l-2 border-t-2 top-0 left-0"></span>
+    <span
+      class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute group-hover:h-[90%] h-[60%] rounded-tr-lg border-r-2 border-t-2 top-0 right-0"></span>
+    <span
+      class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute h-[60%] group-hover:h-[90%] rounded-bl-lg border-l-2 border-b-2 left-0 bottom-0"></span>
+    <span
+      class="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#D4EDF9] absolute h-[20%] rounded-br-lg border-r-2 border-b-2 right-0 bottom-0"></span>
+  </button>
+</div>
 
 <section>
-    <h1 class='text-6x1 bold'>من چه کاری انجام میدهم؟</h1>
-    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
+    <p class='titr'>من چه کاری انجام میدهم؟</p>
+    <p class='desc'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
          و با استفاده از طراحان گرافیک است، چاپگرها 
          و متون بلکه روزنامه و مجله در ستون 
          و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
@@ -46,8 +47,8 @@ Harmoon
           و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی،
          و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
     </p>
-    <h1> درباره من </h1>
-    <p> instagram: <a href='https://www.instagram.com/harmoon.menstyle'> harmoon.menstyle </a> </p>
+    <p class='titr'> درباره من </p>
+    <p class='desc'> instagram: <a href='https://www.instagram.com/harmoon.menstyle'> harmoon.menstyle </a> </p>
 </section>
 {% endblock content %}
 
