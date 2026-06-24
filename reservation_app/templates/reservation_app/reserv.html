@@ -3,15 +3,51 @@
 
 {% block page_title %}
 Book-Harmoon-Appointment
-{% endblock %}
+{% endblock page_title %}
 
 {% block header_references %}
-<link rel='stylesheet' href='{% static "reservation_app/reserv.css" %}'>
+<link rel='stylesheet' href='{% static "reservation_app/reservation.css" %}'>
 {% endblock header_references %}
 
 {% block content %}
-<p style='color: white;'> برای رزرو نوبت یک روز را انتخاب کنید </p>
-{% endblock %}
+<p> برای رزرو نوبت یک روز را انتخاب کنید </p>
+<div>
+    <button>
+    شنبه
+    </button>
+</div>
+<div>
+    <button>
+    یکشنبه
+    </button>
+</div>
+<div>
+    <button>
+        دوشنبه
+    </button>
+</div>
+<div>
+    <button>
+        سه شنبه
+    </button>
+</div>
+<div>
+    <button>
+        چهارشنبه
+    </button>
+</div>
+<div>
+    <button>
+        پنج شنبه
+    </button>
+</div>
+<div>
+    <button>
+        جمعه
+    </button>
+</div>
+
+{% endblock content %}
 
 {% block footer_references %}
 {% endblock footer_references %}
