@@ -38,6 +38,7 @@ li ul {
 }
 
 li {
+    list-style: none;
     background: radial-gradient(
     circle,
     #fbfbfb8f 80%,
