@@ -133,9 +133,7 @@ li {
 }
 
 .titr {
-    font-family: 'Doran';
-    font-weight: bold;
-    font-style: normal;
+    font-family: 'Doran ExtraBold';
     font-size: 30px;
     color: white;
     padding-right: 20px;
