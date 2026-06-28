@@ -7,22 +7,16 @@ Harmoon
 
 {% block header_references %}
 <link rel='stylesheet' href='{% static "reservation_app/index.css" %}'>
-<link rel="preload" href="Doran-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="Doran-Thin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="Doran-Medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="Doran-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="Doran-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="Doran-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
 <script src="https://cdn.tailwindcss.com"></script>
 {% endblock header_references %}
 
 {% block content %} 
-<li>
-    <ul><a class='nav-item' href=''>خانه</a></ul>
-    <ul><a class='nav-item' href=''>رزرو های من</a></ul>
-    <ul><a class='nav-item' href='{% url "Book-Harmoon-Appointment" %}'>رزرو</a></ul>
-    <ul><a class='nav-item' href=''>درباره من</a></ul>
-</li>
+<nav>
+    <a class='nav-item' href=''>خانه</a></ul>
+    <a class='nav-item' href=''>رزرو های من</a></ul>
+    <a class='nav-item' href='{% url "Book-Harmoon-Appointment" %}'>رزرو</a></ul>
+    <a class='nav-item' href=''>درباره من</a></ul>
+</nav>
 <div class='btn'>
   <a href='{% url "Book-Harmoon-Appointment" %}'>
     <button style='margin: 20px;'

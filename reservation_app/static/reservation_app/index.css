@@ -1,17 +1,21 @@
 @font-face {
-    font-family: ZFJahan;
+    /* font-family: ZFJahan;
     src: url('../fonts/ZFJahan.woff') format('woff'),
-    url('../fonts/ZFJahan.ttf') format('truetype');
+    url('../fonts/ZFJahan.ttf') format('truetype'); */
+
+    font-family: hasti;
+    src: url('../fonts/hasti.woff') format('woff'),
+    url('../fonts/hasti.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Doran';
     src: url('Doran-Light.eot');
     src: local('Doran Light'), local('Doran-Light'),
-        url('Doran-Light.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Light.woff2') format('woff2'),
-        url('Doran-Light.woff') format('woff'),
-        url('Doran-Light.ttf') format('truetype');
+        url('../fonts/Doran-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Light.woff2') format('woff2'),
+        url('../fonts/Doran-Light.woff') format('woff'),
+        url('../fonts/Doran-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -21,10 +25,10 @@
     font-family: 'Doran';
     src: url('Doran-Thin.eot');
     src: local('Doran Thin'), local('Doran-Thin'),
-        url('Doran-Thin.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Thin.woff2') format('woff2'),
-        url('Doran-Thin.woff') format('woff'),
-        url('Doran-Thin.ttf') format('truetype');
+        url('../fonts/Doran-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Thin.woff2') format('woff2'),
+        url('../fonts/Doran-Thin.woff') format('woff'),
+        url('../fonts/Doran-Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -34,10 +38,10 @@
     font-family: 'Doran';
     src: url('Doran-Medium.eot');
     src: local('Doran Medium'), local('Doran-Medium'),
-        url('Doran-Medium.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Medium.woff2') format('woff2'),
-        url('Doran-Medium.woff') format('woff'),
-        url('Doran-Medium.ttf') format('truetype');
+        url('../fonts/Doran-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Medium.woff2') format('woff2'),
+        url('../fonts/Doran-Medium.woff') format('woff'),
+        url('../fonts/Doran-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -47,10 +51,10 @@
     font-family: 'Doran';
     src: url('Doran-Bold.eot');
     src: local('Doran Bold'), local('Doran-Bold'),
-        url('Doran-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Bold.woff2') format('woff2'),
-        url('Doran-Bold.woff') format('woff'),
-        url('Doran-Bold.ttf') format('truetype');
+        url('../fonts/Doran-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Bold.woff2') format('woff2'),
+        url('../fonts/Doran-Bold.woff') format('woff'),
+        url('../fonts/Doran-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -60,10 +64,10 @@
     font-family: 'Doran';
     src: url('Doran-Regular.eot');
     src: local('Doran Regular'), local('Doran-Regular'),
-        url('Doran-Regular.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Regular.woff2') format('woff2'),
-        url('Doran-Regular.woff') format('woff'),
-        url('Doran-Regular.ttf') format('truetype');
+        url('../fonts/Doran-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Regular.woff2') format('woff2'),
+        url('../fonts/Doran-Regular.woff') format('woff'),
+        url('../fonts/Doran-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -73,10 +77,10 @@
     font-family: 'Doran';
     src: url('Doran-ExtraBold.eot');
     src: local('Doran ExtraBold'), local('Doran-ExtraBold'),
-        url('Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('Doran-ExtraBold.woff2') format('woff2'),
-        url('Doran-ExtraBold.woff') format('woff'),
-        url('Doran-ExtraBold.ttf') format('truetype');
+        url('../fonts/Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Doran-ExtraBold.woff') format('woff'),
+        url('../fonts/Doran-ExtraBold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -90,28 +94,30 @@
 
 .nav-item {
     display: inline-block;
-    font-family: ZFJahan;
+    font-family: 'hasti', hasti, Hasti;
     font-size: 35px;
-    color: rgb(56, 55, 55);
+    color: black;
     text-decoration: none;
-    border-left: 1px solid gray;
-    margin: 1px;
+    border-left: 1px solid rgb(66, 65, 65);
+    margin: 10px 5px;
     padding: 10px;
+}
+
+.nav-item:last-child {
+    border-left: 0;
 }
 
 .nav-item:hover {
     color: black;
-    border-bottom: 3px solid black;
-    border-radius: 1px;
+    border-bottom: 1px solid black;
     box-sizing: content-box;
 }
 
-li ul {
+nav a {
     display: inline-block;
 }
 
-li {
-    list-style: none;
+nav {
     background: radial-gradient(
     circle,
     #fbfbfb8f 80%,
@@ -125,7 +131,7 @@ li {
 }
 
 @media (max-width: 768px) {
-    li {
+    nav {
         display: flex;
         justify-content: center;
         text-align: center;
@@ -133,7 +139,8 @@ li {
 }
 
 .titr {
-    font-family: 'Doran ExtraBold';
+    font-family: 'Doran';
+    font-weight: bolder;
     font-size: 30px;
     color: white;
     padding-right: 20px;
@@ -141,7 +148,7 @@ li {
 
 .desc {
     font-family: 'Doran';
-    font-size: 22px;
+    font-size: 20px;
     line-height: 2rem;
     text-align: justify;
     max-width: 70%;

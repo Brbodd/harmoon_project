@@ -8,10 +8,10 @@
     font-family: 'Doran';
     src: url('Doran-Light.eot');
     src: local('Doran Light'), local('Doran-Light'),
-        url('Doran-Light.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Light.woff2') format('woff2'),
-        url('Doran-Light.woff') format('woff'),
-        url('Doran-Light.ttf') format('truetype');
+        url('../fonts/Doran-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Light.woff2') format('woff2'),
+        url('../fonts/Doran-Light.woff') format('woff'),
+        url('../fonts/Doran-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -21,10 +21,10 @@
     font-family: 'Doran';
     src: url('Doran-Thin.eot');
     src: local('Doran Thin'), local('Doran-Thin'),
-        url('Doran-Thin.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Thin.woff2') format('woff2'),
-        url('Doran-Thin.woff') format('woff'),
-        url('Doran-Thin.ttf') format('truetype');
+        url('../fonts/Doran-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Thin.woff2') format('woff2'),
+        url('../fonts/Doran-Thin.woff') format('woff'),
+        url('../fonts/Doran-Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -34,10 +34,10 @@
     font-family: 'Doran';
     src: url('Doran-Medium.eot');
     src: local('Doran Medium'), local('Doran-Medium'),
-        url('Doran-Medium.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Medium.woff2') format('woff2'),
-        url('Doran-Medium.woff') format('woff'),
-        url('Doran-Medium.ttf') format('truetype');
+        url('../fonts/Doran-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Medium.woff2') format('woff2'),
+        url('../fonts/Doran-Medium.woff') format('woff'),
+        url('../fonts/Doran-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -47,10 +47,10 @@
     font-family: 'Doran';
     src: url('Doran-Bold.eot');
     src: local('Doran Bold'), local('Doran-Bold'),
-        url('Doran-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Bold.woff2') format('woff2'),
-        url('Doran-Bold.woff') format('woff'),
-        url('Doran-Bold.ttf') format('truetype');
+        url('../fonts/Doran-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Bold.woff2') format('woff2'),
+        url('../fonts/Doran-Bold.woff') format('woff'),
+        url('../fonts/Doran-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -60,10 +60,10 @@
     font-family: 'Doran';
     src: url('Doran-Regular.eot');
     src: local('Doran Regular'), local('Doran-Regular'),
-        url('Doran-Regular.eot?#iefix') format('embedded-opentype'),
-        url('Doran-Regular.woff2') format('woff2'),
-        url('Doran-Regular.woff') format('woff'),
-        url('Doran-Regular.ttf') format('truetype');
+        url('../fonts/Doran-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Regular.woff2') format('woff2'),
+        url('../fonts/Doran-Regular.woff') format('woff'),
+        url('../fonts/Doran-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -73,10 +73,10 @@
     font-family: 'Doran';
     src: url('Doran-ExtraBold.eot');
     src: local('Doran ExtraBold'), local('Doran-ExtraBold'),
-        url('Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('Doran-ExtraBold.woff2') format('woff2'),
-        url('Doran-ExtraBold.woff') format('woff'),
-        url('Doran-ExtraBold.ttf') format('truetype');
+        url('../fonts/Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Doran-ExtraBold.woff') format('woff'),
+        url('../fonts/Doran-ExtraBold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -92,7 +92,7 @@ p {
 }
 
 div {
-    font-family: Doran;
+    font-family: 'Doran';
     margin: 10px;
     display: flex; 
     justify-content: center; 
@@ -100,6 +100,7 @@ div {
 }
 
 button {
+    font-family: 'Doran';
   --green: #1BFD9C;
   font-size: 15px;
   padding: 0.7em 2.7em;
