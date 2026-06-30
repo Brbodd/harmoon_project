@@ -1,8 +1,4 @@
 @font-face {
-    /* font-family: ZFJahan;
-    src: url('../fonts/ZFJahan.woff') format('woff'),
-    url('../fonts/ZFJahan.ttf') format('truetype'); */
-
     font-family: hasti;
     src: url('../fonts/hasti.woff') format('woff'),
     url('../fonts/hasti.ttf') format('truetype');
@@ -136,6 +132,16 @@ nav {
         justify-content: center;
         text-align: center;
     }
+
+    .about {
+        font-size: 21px;
+        width: 100px;
+    }
+
+    .about {
+        font-size: 21px;
+        width: 100px;
+    }
 }
 
 .titr {
@@ -162,6 +168,39 @@ nav {
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+.about {
+    font-size: 21px;
+    width: 50%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.13);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+.info-card {
+    width: 90%;
+    text-align: center;
+    color: white;
+    font-family: 'Doran';
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.13);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px rgba(8,7,16,0.4);
+}
+
+.info-card a {
+    color: white;
 }
 
 p a {
