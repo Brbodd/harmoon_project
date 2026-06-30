@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('Doran-Light.eot');
+    src: url('../fonts/Doran-Light.eot');
     src: local('Doran Light'), local('Doran-Light'),
         url('../fonts/Doran-Light.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Light.woff2') format('woff2'),
@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('Doran-Thin.eot');
+    src: url('../fonts/Doran-Thin.eot');
     src: local('Doran Thin'), local('Doran-Thin'),
         url('../fonts/Doran-Thin.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Thin.woff2') format('woff2'),
@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('Doran-Medium.eot');
+    src: url('../fonts/Doran-Medium.eot');
     src: local('Doran Medium'), local('Doran-Medium'),
         url('../fonts/Doran-Medium.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Medium.woff2') format('woff2'),
@@ -45,7 +45,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('Doran-Bold.eot');
+    src: url('../fonts/Doran-Bold.eot');
     src: local('Doran Bold'), local('Doran-Bold'),
         url('../fonts/Doran-Bold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Bold.woff2') format('woff2'),
@@ -58,7 +58,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('Doran-Regular.eot');
+    src: url('../fonts/Doran-Regular.eot');
     src: local('Doran Regular'), local('Doran-Regular'),
         url('../fonts/Doran-Regular.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Regular.woff2') format('woff2'),
@@ -71,7 +71,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('Doran-ExtraBold.eot');
+    src: url('../fonts/Doran-ExtraBold.eot');
     src: local('Doran ExtraBold'), local('Doran-ExtraBold'),
         url('../fonts/Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-ExtraBold.woff2') format('woff2'),
@@ -80,6 +80,21 @@
     font-weight: bold;
     font-style: normal;
     font-display: swap;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --glass: rgba(255,255,255,.13);
+    --glass-border: rgba(255,255,255,.1);
+    --shadow: 0 0 40px rgba(8,7,16,.6);
+}
+
+.glass {
+    background-color: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--glass-border);
+    box-shadow: var(--shadow);
 }
 
 .btn {
@@ -91,8 +106,8 @@
 .nav-item {
     display: inline-block;
     font-family: 'hasti', hasti, Hasti;
-    font-size: 35px;
-    color: black;
+    font-size: clamp(1.5rem,4vw,2.2rem);
+    color: var(--black);
     text-decoration: none;
     border-left: 1px solid rgb(66, 65, 65);
     margin: 10px 5px;
@@ -104,8 +119,8 @@
 }
 
 .nav-item:hover {
-    color: black;
-    border-bottom: 1px solid black;
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
     box-sizing: content-box;
 }
 
@@ -120,10 +135,60 @@ nav {
     #88898900 100%,
     #14141400 50%
     );
-    border: 1px solid white;
+    border: 1px solid var(--white);
     border-radius: 15px;
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    box-shadow: var(--shadow);
     margin: 10px;
+}
+
+.titr {
+    font-family: 'Doran';
+    font-weight: 800;
+    font-size: clamp(1.5rem,4vw,2.2rem);
+    color: var(--white);
+    padding-right: 20px;
+}
+
+.desc {
+    font-family: 'Doran';
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: justify;
+    height: 100%;
+    width: 70%;
+    color: var(--white);
+    padding: 2%;
+    margin: 1%;
+    border-radius: 10px;
+}
+
+.about {
+    font-size: 1.5rem;
+    width: 50%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.info-card {
+    width: 90%;
+    text-align: center;
+    color: var(--black);
+    font-family: 'Doran';
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.info-card a {
+    color: var(--black);
+}
+
+p a {
+  color: var(--white);
 }
 
 @media (max-width: 768px) {
@@ -134,75 +199,7 @@ nav {
     }
 
     .about {
-        font-size: 21px;
-        width: 100px;
+        font-size: 1.3rem;
+        width: 70%;
     }
-
-    .about {
-        font-size: 21px;
-        width: 100px;
-    }
-}
-
-.titr {
-    font-family: 'Doran';
-    font-weight: bolder;
-    font-size: 30px;
-    color: white;
-    padding-right: 20px;
-}
-
-.desc {
-    font-family: 'Doran';
-    font-size: 20px;
-    line-height: 2rem;
-    text-align: justify;
-    max-width: 70%;
-    height: 100%;
-    width: 70%; /* TODO: 25% ? */
-    color: white;
-    padding: 2%;
-    margin: 1%;
-    border-radius: 10px;
-    background-color: rgba(255,255,255,0.13);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-}
-
-.about {
-    font-size: 21px;
-    width: 50%;
-    margin: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 30px;
-    border-radius: 15px;
-    background-color: rgba(255,255,255,0.13);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-}
-
-.info-card {
-    width: 90%;
-    text-align: center;
-    color: white;
-    font-family: 'Doran';
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(255,255,255,0.13);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 20px rgba(8,7,16,0.4);
-}
-
-.info-card a {
-    color: white;
-}
-
-p a {
-  color: white;
 }
