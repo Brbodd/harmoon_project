@@ -12,8 +12,18 @@
   {% endblock header_references %}
 </head>
 
-<body dir='rtl'>
-    {% block content %}{% endblock content %}
+<body dir="rtl">
+
+    <div class="sidebar">
+        <div class="logo">HARMOON</div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div> 
     {% block footer_references %}{% endblock footer_references %}
 </body>
 

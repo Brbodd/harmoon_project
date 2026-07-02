@@ -11,13 +11,13 @@ Harmoon
 {% endblock header_references %}
 
 {% block content %} 
-<nav>
-    <a class='nav-item' href=''>خا نه</a></ul>
-    <a class='nav-item' href=''>رزرو ها ی من</a></ul>
-    <a class='nav-item' href='{% url "Book-Harmoon-Appointment" %}'>رزرو</a></ul>
-    <a class='nav-item' href=''>درباره من</a></ul>
+<nav class='navigation glass'>
+    <a class='nav-item' href=''>خا نه</a>
+    <a class='nav-item' href=''>رزرو ها ی من</a>
+    <a class='nav-item' href='{% url "Book-Harmoon-Appointment" %}'>رزرو</a>
+    <a class='nav-item' href=''>درباره من</a>
 </nav>
-<div class='btn'>
+<div class='reserv-btn flex-center'>
   <a href='{% url "Book-Harmoon-Appointment" %}'>
     <button style='margin: 20px;'
       class="relative cursor-pointer py-4 px-8 text-center font-barlow inline-flex justify-center text-base uppercase text-white rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden">
@@ -52,9 +52,11 @@ Harmoon
     <div class="about glass">
       <div class="info-card glass">
           <p>Instagram:
-              <a href="https://www.instagram.com/harmoon.menstyle">
-                  harmoon.menstyle
-              </a>
+             <a href="https://www.instagram.com/harmoon.menstyle"
+                target="_blank"
+                rel="noopener noreferrer">
+                harmoon.menstyle
+            </a>
           </p>
       </div>
 
