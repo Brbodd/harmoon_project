@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock title %}
+    
+
+{% block header_references %}
+    <link rel='stylesheet' href='{% static "reservation_app/day_schedule.css" %}'>
+{% endblock header_references %}
+
+
+{% block content %}
+<div class='glass flex-center' style='margin-top: 5%;'>
+    <section>
+        <p class='flex-center'> تایم مورد نظر خود را انتخاب کنید: </p>
+        <p class='day-name flex-center'>- {{ date }} -</p>
+        <div class='flex-center'>
+            <button>
+                16:00 - 16:30
+            </button>
+            <button>
+                16:30 - 17:00
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                17:00 - 17:30
+            </button>
+            <button>
+                17:30 - 18:00
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                18:00 - 18:30
+            </button>
+            <button>
+                18:30 - 19:00
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                14:30 - 15:00
+            </button>
+            <button>
+                15:00 - 15:30
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                11:00 - 11:30
+            </button>
+            <button>
+                11:30 - 12:00
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                13:00 - 13:30
+            </button>
+            <button>
+                13:30 - 14:00
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                15:00 - 15:30
+            </button>
+            <button>
+                15:30 - 16:00
+            </button>
+        </div>
+    </section>
+</div>
+{% endblock content %}
+    

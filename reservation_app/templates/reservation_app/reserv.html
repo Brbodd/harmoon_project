@@ -10,41 +10,46 @@ Book-Harmoon-Appointment
 {% endblock header_references %}
 
 {% block content %}
-<p> برای رزرو نوبت یک روز را انتخاب کنید </p>
-<div>
-    <button>
-        شنبه | ۱۴۰۵/۰۵/۰۱
-    </button>
-</div>
-<div>
-    <button>
-    یکشنبه | ۱۴۰۵/۰۵/۰۲
-    </button>
-</div>
-<div>
-    <button>
-        دوشنبه | ۱۴۰۵/۰۵/۰۳
-    </button>
-</div>
-<div>
-    <button>
-        سه شنبه | ۱۴۰۵/۰۵/۰۴    
-    </button>
-</div>
-<div>
-    <button>
-        چهارشنبه | ۱۴۰۵/۰۵/۰۵
-    </button>
-</div>
-<div>
-    <button>
-        پنج شنبه | ۱۴۰۵/۰۵/۰۶    
-    </button>
-</div>
-<div>
-    <button>
-        جمعه | ۱۴۰۵/۰۵/۰۷
-    </button>
+<div class='glass flex-center' style='margin-top: 5%;'>
+    <section>
+        <p>برای رزرو نوبت یک روز را انتخاب کنید: </p>
+        <div class='flex-center'>
+            <button>
+                <a href='{% url "Book-Harmoon-Appointment" %}'/>
+                شنبه  ۱۴۰۵/۰۵/۰۱
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+            یکشنبه  ۱۴۰۵/۰۵/۰۲
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                دوشنبه  ۱۴۰۵/۰۵/۰۳
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                سه شنبه  ۱۴۰۵/۰۵/۰۴    
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                چهارشنبه  ۱۴۰۵/۰۵/۰۵
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                پنج شنبه  ۱۴۰۵/۰۵/۰۶    
+            </button>
+        </div>
+        <div class='flex-center'>
+            <button>
+                جمعه  ۱۴۰۵/۰۵/۰۷
+            </button>
+        </div>
+    </section>
 </div>
 {% endblock content %}
 

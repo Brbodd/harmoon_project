@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Barbod Zahedi">
   <title>{% block page_title %}{% endblock page_title %}</title>
-  <link rel='stylesheet' href='{% static "base.css" %}'>
+  <link rel='icon' href='/static/images/favicon.png' type='image/png' />
+  <link rel='stylesheet' href='{% static "base.css" %}' />
   {% block header_references %}
   {% endblock header_references %}
 </head>
@@ -20,10 +21,7 @@
         <div class="line"></div>
         <div class="line"></div>
     </div>
-
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div> 
+    {% block content %}{% endblock %}
     {% block footer_references %}{% endblock footer_references %}
 </body>
 

@@ -47,7 +47,7 @@ body {
     color: var(--white);
     font-size: 32px;
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .content {
@@ -62,7 +62,7 @@ body {
 @media (max-width: 768px) {
     .sidebar {
         left: 3.5rem;
-        opacity: .7;
+        opacity: .5;
         width: 70px;
     }
 
