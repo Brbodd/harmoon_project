@@ -88,6 +88,7 @@
     --glass: rgba(255,255,255,.13);
     --glass-border: rgba(255,255,255,.1);
     --shadow: 0 0 40px rgba(8,7,16,.6);
+    --custom-green: #254031;
 }
 
 .glass {
@@ -146,11 +147,20 @@
 }
 
 .titr {
+    display: inline-block;
     font-family: Doran, sans-serif;
     font-weight: 800;
     font-size: clamp(1.5rem,4vw,2.2rem);
     color: var(--white);
-    padding-right: 20px;
+    background-color: var(--custom-green);
+    padding: 5px;
+    padding-inline: 20px;
+    margin-inline: 20px;
+    border: 2px solid var(--white);
+    border-right: transparent;
+    border-bottom: transparent;
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 10px var(--white);
 }
 
 .desc {

@@ -7,7 +7,9 @@
 }
 
 body{
-    background-color: #254031;
+    background-color: #254031;    
+    background-image:  radial-gradient(var(--gray) 1.2px, transparent 1.2px), 
+    radial-gradient(var(--gray) 1.2px, transparent 1.2px);
 }
 
 .background{
