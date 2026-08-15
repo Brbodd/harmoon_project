@@ -1,12 +1,12 @@
 @font-face {
-    font-family: hasti;
-    src: url('../fonts/hasti.woff') format('woff'),
-    url('../fonts/hasti.ttf') format('truetype');
+    font-family: ZFJahan;
+    src: url('../fonts/ZFJahan.woff') format('woff'),
+    url('../fonts/ZFJahan.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Doran';
-    src: url('../fonts/Doran-Light.eot');
+    src: url('Doran-Light.eot');
     src: local('Doran Light'), local('Doran-Light'),
         url('../fonts/Doran-Light.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Light.woff2') format('woff2'),
@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('../fonts/Doran-Thin.eot');
+    src: url('Doran-Thin.eot');
     src: local('Doran Thin'), local('Doran-Thin'),
         url('../fonts/Doran-Thin.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Thin.woff2') format('woff2'),
@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('../fonts/Doran-Medium.eot');
+    src: url('Doran-Medium.eot');
     src: local('Doran Medium'), local('Doran-Medium'),
         url('../fonts/Doran-Medium.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Medium.woff2') format('woff2'),
@@ -45,7 +45,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('../fonts/Doran-Bold.eot');
+    src: url('Doran-Bold.eot');
     src: local('Doran Bold'), local('Doran-Bold'),
         url('../fonts/Doran-Bold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Bold.woff2') format('woff2'),
@@ -58,7 +58,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('../fonts/Doran-Regular.eot');
+    src: url('Doran-Regular.eot');
     src: local('Doran Regular'), local('Doran-Regular'),
         url('../fonts/Doran-Regular.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-Regular.woff2') format('woff2'),
@@ -71,7 +71,7 @@
 
 @font-face {
     font-family: 'Doran';
-    src: url('../fonts/Doran-ExtraBold.eot');
+    src: url('Doran-ExtraBold.eot');
     src: local('Doran ExtraBold'), local('Doran-ExtraBold'),
         url('../fonts/Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Doran-ExtraBold.woff2') format('woff2'),
@@ -85,17 +85,10 @@
 :root {
     --white: #fff;
     --black: #000;
+    --light-green: #1BFD9C;
     --glass: rgba(255,255,255,.13);
     --glass-border: rgba(255,255,255,.1);
     --shadow: 0 0 40px rgba(8,7,16,.6);
-}
-
-.glass {
-    background-color: var(--glass);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--glass-border);
-    box-shadow: var(--shadow);
-    border-radius: 10px;
 }
 
 .flex-center {
@@ -104,116 +97,72 @@
     align-items: center;
 }
 
-.nav-item {
-    display: inline-block;
-    font-family: 'hasti', hasti, Hasti;
-    font-size: clamp(1.5rem,4vw,2.2rem);
-    color: var(--black);
-    text-decoration: none;
-    border-left: 1px solid rgb(66, 65, 65);
-    margin: 10px 5px;
-    padding: 10px;
-    padding-left: 18px;
-}
-
-.nav-item:last-child {
-    border-left: 0;
-}
-
-.nav-item:hover {
-    color: green;
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: linear-gradient(
-    90deg,
-    rgba(242, 246, 247, 1) 0%,
-    rgba(37, 64, 49, .1) 10%,
-    rgba(247, 252, 250, 1) 100%);
-    border: 1px solid var(--white);
-    border-radius: 15px;
+.glass {
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--glass-border);
     box-shadow: var(--shadow);
-    margin: 10px;
-}
-
-.reserv-btn {
-    padding: 18px 45px;
-    font-size:18px;
-    letter-spacing:2px;
-}
-
-.titr {
-    font-family: 'Doran';
-    font-weight: 800;
-    font-size: clamp(1.5rem,4vw,2.2rem);
-    color: var(--white);
-    padding-right: 20px;
-}
-
-.desc {
-    font-family: 'Doran';
-    font-size: 1.2rem;
-    line-height: 2rem;
-    text-align: justify;
-    height: 100%;
-    width: 70%;
-    color: var(--white);
-    padding: 2%;
-    margin: 1%;
-}
-
-.about {
-    font-size: 1.5rem;
-    width: 50%;
-    margin: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 30px;
-    border-radius: 15px;
-}
-
-.info-card {
-    width: 90%;
-    text-align: center;
-    color: var(--black);
-    font-family: 'Doran';
-    padding: 20px;
     border-radius: 10px;
 }
 
-.info-card a {
-    color: var(--black);
+section p {
+    font-family: Doran, sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 35px;
+    margin: 20px;
 }
 
-p a {
-  color: var(--white);
+.day-name {
+    color: #1BFD9C;
+}
+
+section div {
+    font-family: Doran, sans-serif;
+    margin: 15px;
+}
+
+section button {
+    font-family: inherit;
+    font-size: 15px;
+    width: 200px;
+    padding: 0.7em 2.7em;
+    margin: .5rem;
+    letter-spacing: 0.06em;
+    position: relative;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--black);
+    background: linear-gradient(to right, rgb(5, 5, 5) 100%, transparent 40%,transparent 60% , rgba(27, 253, 156) 100%);
+    color: var(--white);
+    box-shadow: inset 0 0 10px .4 var(--white), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+section button:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+section button:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+}
+
+section button:hover:before {
+  transform: translateX(15em);
 }
 
 @media (max-width: 768px) {
-    .navigation {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .about {
-        font-size: 1.3rem;
-        width: 70%;
-    }
-
-    .desc,
-    .about{
-        width:95%;
-        margin:auto;
-    }
-
-    .titr{
-        margin-right:0;
-        text-align:right;
+    section {
+        width: 100%;
+        height: 1rem;
+        transform: none;        
     }
 }

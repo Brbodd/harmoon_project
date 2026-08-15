@@ -1,6 +1,7 @@
 :root {
     --white: #fff;
-    --green: #254031;
+    --gray: rgb(128, 128, 128, .5);
+    --custom-green: #254031;
 }
 
 * {
@@ -11,10 +12,12 @@
 
 body {
     position: relative;
-    background: var(--green);
+    background: var(--custom-green);
+    background-image:  radial-gradient(var(--gray) 1.2px, transparent 1.2px), 
+    radial-gradient(var(--gray) 1.2px, transparent 1.2px);
+    background-size: 16px 16px;
     min-height: 100vh;
     overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .sidebar {
@@ -43,7 +46,7 @@ body {
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
-    background: var(--green);
+    background: var(--custom-green);
     color: var(--white);
     font-size: 32px;
     font-weight: 900;
