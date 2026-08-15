@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Harmoon Barber</title>
+    <link rel='stylesheet' href='{% static "account_module/css/register.css" %}'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link crossorigin='anonymous' rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Login Here</h3>
+
+        <label for="username">Full name</label>
+        <input type="text" placeholder="Full name" id="username">
+
+        <label for="password">Phone number</label>
+        <input type="password" placeholder="Phone number" id="password">
+
+        <button>Log In</button>
+        <div class="social">
+            <p id='harmoon-text'> <a href='{% url "Harmoon-Home" %}'> Harmoon Menstyle </a> </p>
+        </div>
+    </form>
+</body>
+</html>
