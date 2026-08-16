@@ -158,11 +158,3 @@ section button:before {
 section button:hover:before {
   transform: translateX(15em);
 }
-
-@media (max-width: 768px) {
-    section {
-        width: 100%;
-        height: 1rem;
-        transform: none;        
-    }
-}

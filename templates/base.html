@@ -9,12 +9,13 @@
   <title>{% block page_title %}{% endblock page_title %}</title>
   <link rel='icon' href='/static/images/favicon.png' type='image/png' />
   <link rel='stylesheet' href='{% static "/css/base.css" %}' />
+  <link rel='stylesheet' href='{% static "/includes/css/navigation.css" %}'>
   {% block header_references %}
   {% endblock header_references %}
 </head>
 
 <body dir="rtl">
-    
+    {% include "includes/navigation.html" %}
     <div class="sidebar">
         <div class="logo">HARMOON</div>
         <div class="line"></div>

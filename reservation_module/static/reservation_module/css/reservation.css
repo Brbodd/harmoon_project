@@ -113,7 +113,6 @@
 
 .select-day {
     font-family: Doran, sans-serif;
-    margin: 15px;
 }
 
 .day-list {
@@ -154,5 +153,9 @@
     section {
         width: 90%;
         height: auto;
+    }
+    
+    .day-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

@@ -10,14 +10,7 @@ Harmoon
 <script src="https://cdn.tailwindcss.com"></script>
 {% endblock header_references %}
 
-{% block content %} 
-<nav class='navigation glass'>
-    <a class='nav-item' href=''>خا نه</a>
-    <a class='nav-item' href='{% url "account-page" %}'>رزرو ها ی من</a>
-    <a class='nav-item' href='{% url "reservation" %}'>رزرو</a>
-    <a class='nav-item' href=''>درباره من</a>
-</nav>
-
+{% block content %}
 <div class='reserv-btn flex-center'>
   <a href='{% url "reservation" %}'>
     <button style='margin: 20px;'

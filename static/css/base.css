@@ -1,3 +1,87 @@
+@font-face {
+    font-family: hasti;
+    src: url('../fonts/hasti.woff') format('woff'),
+    url('../fonts/hasti.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Light.eot');
+    src: local('Doran Light'), local('Doran-Light'),
+        url('../fonts/Doran-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Light.woff2') format('woff2'),
+        url('../fonts/Doran-Light.woff') format('woff'),
+        url('../fonts/Doran-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Thin.eot');
+    src: local('Doran Thin'), local('Doran-Thin'),
+        url('../fonts/Doran-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Thin.woff2') format('woff2'),
+        url('../fonts/Doran-Thin.woff') format('woff'),
+        url('../fonts/Doran-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Medium.eot');
+    src: local('Doran Medium'), local('Doran-Medium'),
+        url('../fonts/Doran-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Medium.woff2') format('woff2'),
+        url('../fonts/Doran-Medium.woff') format('woff'),
+        url('../fonts/Doran-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Bold.eot');
+    src: local('Doran Bold'), local('Doran-Bold'),
+        url('../fonts/Doran-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Bold.woff2') format('woff2'),
+        url('../fonts/Doran-Bold.woff') format('woff'),
+        url('../fonts/Doran-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Regular.eot');
+    src: local('Doran Regular'), local('Doran-Regular'),
+        url('../fonts/Doran-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-Regular.woff2') format('woff2'),
+        url('../fonts/Doran-Regular.woff') format('woff'),
+        url('../fonts/Doran-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-ExtraBold.eot');
+    src: local('Doran ExtraBold'), local('Doran-ExtraBold'),
+        url('../fonts/Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Doran-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Doran-ExtraBold.woff') format('woff'),
+        url('../fonts/Doran-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --white: #fff;
     --gray: rgb(128, 128, 128, .5);
@@ -122,10 +206,6 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -133,100 +213,53 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-/**
- * Correct the padding in Firefox.
- */
 
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
 }
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
 
 progress {
   vertical-align: baseline;
 }
 
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
 textarea {
   overflow: auto;
 }
 
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  padding: 0;
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
 [type="search"] {
-  appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  appearance: textfield;
+  outline-offset: -2px;
 }
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  font: inherit;
 }
-
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
 
 details {
   display: block;
