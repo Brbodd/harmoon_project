@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock title %}
+    
+
+{% block header_references %}
+    <link rel='stylesheet' href='{% static "reservation_module/css/day_schedule.css" %}'>
+{% endblock header_references %}
+
+{% block content %}
+<div class='glass flex-center' style='margin-top: 5%;'>
+    <section>
+        <p class='flex-center'> تایم مورد نظر خود را انتخاب کنید: </p>
+        <p class='day-name flex-center'>- {{ date }} -</p>
+        {% for time in times %}
+            <button class='flex-center'>
+                {{ time }}
+            </button>
+        {% endfor %}
+    </section>
+</div>
+{% endblock content %}
+    

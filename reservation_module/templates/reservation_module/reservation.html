@@ -11,44 +11,23 @@ Book-Harmoon-Appointment
 
 {% block content %}
 <div class='glass flex-center' style='margin-top: 5%;'>
-    <section>
-        <p>برای رزرو نوبت یک روز را انتخاب کنید: </p>
-        <div class='flex-center'>
-            <button>
-                شنبه  ۱۴۰۵/۰۵/۰۱
-            </button>
+    <div clas=''>
+        <p class='label flex-center'>
+            برای رزرو نوبت یک روز را انتخاب کنید:
+        </p>
+        <div class=''>
+            <div class='day-list'>
+
+                {% for day in days %}
+                        <a href="{% url 'reservation-day' day.date %}" class="day-btn">
+                            {{ day.day }}
+                            {{ day.number }}
+                        </a>
+                {% endfor %}
+
+            </div>
         </div>
-        <div class='flex-center'>
-            <button>
-            یکشنبه  ۱۴۰۵/۰۵/۰۲
-            </button>
-        </div>
-        <div class='flex-center'>
-            <button>
-                دوشنبه  ۱۴۰۵/۰۵/۰۳
-            </button>
-        </div>
-        <div class='flex-center'>
-            <button>
-                سه شنبه  ۱۴۰۵/۰۵/۰۴    
-            </button>
-        </div>
-        <div class='flex-center'>
-            <button>
-                چهارشنبه  ۱۴۰۵/۰۵/۰۵
-            </button>
-        </div>
-        <div class='flex-center'>
-            <button>
-                پنج شنبه  ۱۴۰۵/۰۵/۰۶    
-            </button>
-        </div>
-        <div class='flex-center'>
-            <button>
-                جمعه  ۱۴۰۵/۰۵/۰۷
-            </button>
-        </div>
-    </section>
+    </div>
 </div>
 {% endblock content %}
 

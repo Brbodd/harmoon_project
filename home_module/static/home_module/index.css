@@ -111,10 +111,10 @@
     font-size: clamp(1.5rem,4vw,2.2rem);
     color: var(--black);
     text-decoration: none;
-    border-left: 1px solid rgb(66, 65, 65);
     margin: 10px 5px;
     padding: 10px;
     padding-left: 18px;
+    text-shadow: 1px 1px 1px var(--white);
 }
 
 .nav-item:last-child {
@@ -173,6 +173,7 @@
     color: var(--white);
     padding: 2%;
     margin: 1%;
+    box-shadow: 0 0 5px var(--white);
 }
 
 .about {
@@ -185,6 +186,7 @@
     gap: 20px;
     padding: 30px;
     border-radius: 15px;
+    box-shadow: 0 0 5px var(--white);
 }
 
 .info-card {
@@ -223,7 +225,7 @@ p a {
     }
 
     .titr{
-        margin-right:0;
+        margin: 2%;
         text-align:right;
     }
 }
