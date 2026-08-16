@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block header_references %}
+    <link rel='stylesheet' href='{% static "account_module/css/account.css" %}'>
+{% endblock header_references %}
+
+
+{% block content %}
+    <div class='glass'>
+        <p>
+            {{ reservations }}
+        </p>
+    </div>
+{% endblock content %}
+    
