@@ -104,6 +104,10 @@
     border-radius: 10px;
 }
 
+.main-section {
+    margin: 60px;
+}
+
 .label {
     font-family: 'Doran', sans-serif;
     color: var(--white);

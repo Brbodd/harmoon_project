@@ -314,7 +314,9 @@ template {
     font-size: 32px;
     font-weight: 900;
     letter-spacing: 1px;
+    text-shadow: 0 0 5px var(--white);
 }
+
 
 .content {
     position: relative;

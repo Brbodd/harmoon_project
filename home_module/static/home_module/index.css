@@ -59,12 +59,10 @@
 
 .about {
     font-size: 1.5rem;
-    width: 50%;
-    margin: 1%;
-    display: flex;
-    flex-direction: column;
+    width: 70%;
     align-items: center;
     gap: 20px;
+    margin-block: 1%;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 5px var(--white);
@@ -95,6 +93,8 @@ p a {
     }
 
     .about {
+        display: flex;
+        flex-direction: column;
         font-size: 1.3rem;
         width: 70%;
     }
