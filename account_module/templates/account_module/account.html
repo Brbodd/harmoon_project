@@ -2,15 +2,29 @@
 {% load static %}
 
 {% block header_references %}
-    <link rel='stylesheet' href='{% static "account_module/css/account.css" %}'>
+    <link rel="stylesheet" href="{% static 'account_module/css/account.css' %}">
 {% endblock header_references %}
 
-
 {% block content %}
-    <div class='glass'>
-        <p>
-            {{ reservations }}
-        </p>
-    </div>
+
+    {% for reservation in reservations %}
+
+        <div class="glass">
+
+            <div class="date-box">
+                {{ reservation.date }}
+            </div>
+
+            <div class="time-box">
+                {{ reservation.time }}
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <p>هنوز هیچ رزروی ندارید.</p>
+
+    {% endfor %}
+
 {% endblock content %}
-    

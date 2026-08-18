@@ -8,19 +8,19 @@
     <link crossorigin='anonymous' rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body dir='rtl'>
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
     <form>
-        <h3>Login Here</h3>
+        <h3>وارد شوید</h3>
 
-        <label for="username">Full name</label>
-        <input type="text" placeholder="Full name" id="username">
+        {{ register_form.full_name.label_tag}}
+        {{ register_form.full_name}}
 
-        <label for="password">Phone number</label>
-        <input type="password" placeholder="Phone number" id="password">
+        {{ register_form.phone_number.label_tag }}
+        {{ register_form.phone_number}}
 
         <button>Log In</button>
         <div class="social">

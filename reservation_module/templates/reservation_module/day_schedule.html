@@ -17,9 +17,11 @@
             <p class='day-name flex-center'>- {{ date }} -</p>
             <div class='time-slots'>
                 {% for time in times %}
-                    <button class='flex-center day-time'>
-                        {{ time }}
-                    </button>
+                    <a href='#' class='time-link'>
+                        <button class='flex-center day-time'>
+                            {{ time }}
+                        </button>
+                    </a>
                 {% endfor %}
             </div>
         </section>
