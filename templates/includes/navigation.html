@@ -1,6 +1,24 @@
 <nav class='navigation glass'>
-    <a class='nav-item' href='{% url "Harmoon-Home" %}'>خا نه</a>
-    <a class='nav-item' href='{% url "reservation" %}'>رزرو</a>
-    <a class='nav-item' href='{% url "account-page" %}'>رزرو ها ی من</a>
-    <a class='nav-item' href=''>درباره ما</a>
+    <div class='nav-box flex-center'>
+        <i class='icon fa-solid fa-home fa-7x'></i>
+        <a class='nav-item' href='{% url "Harmoon-Home" %}'>خا نه</a>
+    </div>
+
+    <div style='background-color: black; width:1px; height:50px;'></div>
+    <div class='nav-box flex-center'>
+        <i class='icon fa-solid fa-scissors fa-7x'></i>
+        <a class='nav-item' href='{% url "reservation" %}'>رزرو</a>
+    </div>
+
+    <div style='background-color: black; width:1px; height:50px;'></div>
+    <div class='nav-box flex-center'>
+        <i class='icon fa-solid fa-user fa-9x'></i>
+        <a class='nav-item' href='{% url "account-page" %}'>اکانت من</a>
+    </div>
+
+    <div style='background-color: black; width:1px; height:50px;'></div>
+    <div class='nav-box flex-center'>
+        <i class='icon fa-solid fa-store fa-9x'></i>
+        <a class='nav-item' href=''>درباره ما</a>
+    </div>
 </nav>
