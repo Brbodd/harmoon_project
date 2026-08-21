@@ -99,6 +99,7 @@ body {
     background: var(--custom-green);
     background-image:  radial-gradient(var(--gray) 1.2px, transparent 1.2px), 
     radial-gradient(var(--gray) 1.2px, transparent 1.2px);
+    z-index: 1000;
     background-size: 16px 16px;
     min-height: 100vh;
     overflow-x: hidden;
@@ -294,7 +295,7 @@ template {
     justify-content: space-between;
     align-items: stretch;
 
-    z-index: 0;
+    z-index: -1000;
     pointer-events: none;
 }
 
@@ -320,8 +321,6 @@ template {
 
 .content {
     position: relative;
-    z-index: 10;
-
     margin-left: 320px;
     width: calc(100% - 320px);
     min-height: 100vh;
@@ -330,8 +329,8 @@ template {
 @media (max-width: 768px) {
     .sidebar {
         left: 3.5rem;
-        opacity: .5;
         width: 70px;
+        z-index: -1000;
     }
 
     .line {

@@ -69,7 +69,9 @@
 }
 
 .info-card {
+    position: relative;
     width: 90%;
+    height: 100px;
     text-align: center;
     color: var(--black);
     font-family: Doran, sans-serif;
@@ -79,6 +81,14 @@
 
 .info-card a {
     color: var(--black);
+}
+
+.icon-1 {
+    position: absolute;
+    font-size: 7rem;
+    color: var(--white);
+    transform: translate(-125px);
+    z-index: -1;
 }
 
 p a {
@@ -92,6 +102,10 @@ p a {
         text-align: center;
     }
 
+    .nav-item {
+        padding: 0;
+    }
+
     .about {
         display: flex;
         flex-direction: column;
@@ -101,12 +115,24 @@ p a {
 
     .desc,
     .about{
-        width:95%;
-        margin:auto;
+        width: 95%;
+        margin: auto;
     }
 
     .titr{
         margin: 2%;
-        text-align:right;
+        text-align: right;
+    }
+
+    .info-card {
+        width: 80%;
+        font-size: 1.4em;
+    }
+
+    .icon-1 {
+        font-size: 120px;
+        opacity: .3;
+        transform: translate(-120%, -20%);
+        color: var(--custom-green);
     }
 }
