@@ -1,0 +1,228 @@
+@font-face {
+    font-family: hasti;
+    src: url('../../fonts/hasti.woff') format('woff'),
+    url('../../fonts/hasti.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Light.eot');
+    src: local('Doran Light'), local('Doran-Light'),
+        url('../../fonts/Doran-Light.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Doran-Light.woff2') format('woff2'),
+        url('../../fonts/Doran-Light.woff') format('woff'),
+        url('../../fonts/Doran-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Thin.eot');
+    src: local('Doran Thin'), local('Doran-Thin'),
+        url('../../fonts/Doran-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Doran-Thin.woff2') format('woff2'),
+        url('../../fonts/Doran-Thin.woff') format('woff'),
+        url('../../fonts/Doran-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Medium.eot');
+    src: local('Doran Medium'), local('Doran-Medium'),
+        url('../../fonts/Doran-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Doran-Medium.woff2') format('woff2'),
+        url('../../fonts/Doran-Medium.woff') format('woff'),
+        url('../../fonts/Doran-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Bold.eot');
+    src: local('Doran Bold'), local('Doran-Bold'),
+        url('../../fonts/Doran-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Doran-Bold.woff2') format('woff2'),
+        url('../../fonts/Doran-Bold.woff') format('woff'),
+        url('../../fonts/Doran-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-Regular.eot');
+    src: local('Doran Regular'), local('Doran-Regular'),
+        url('../../fonts/Doran-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Doran-Regular.woff2') format('woff2'),
+        url('../../fonts/Doran-Regular.woff') format('woff'),
+        url('../../fonts/Doran-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('Doran-ExtraBold.eot');
+    src: local('Doran ExtraBold'), local('Doran-ExtraBold'),
+        url('../../fonts/Doran-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Doran-ExtraBold.woff2') format('woff2'),
+        url('../../fonts/Doran-ExtraBold.woff') format('woff'),
+        url('../../fonts/Doran-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Doran', sans-serif;
+    background-color: #254031;    
+    background-image:  radial-gradient(var(--gray) 1.2px, transparent 1.2px), 
+    radial-gradient(var(--gray) 1.2px, transparent 1.2px);
+}
+
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:first-child{
+    background: linear-gradient(
+        white,
+        gray
+    );
+    left: -80px;
+    top: -80px;
+}
+
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #606062,
+        #cdcccb
+    );
+    right: -30px;
+    bottom: -80px;
+}
+
+form {
+    font-family: 'Doran', sans-serif;
+    height: fit-content;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 35px 35px;
+}
+
+.form-1 label{
+    font-size: 1.2em;
+}
+
+form *{
+    font-family: inherit;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3{
+    font-size: 2.2em;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder{
+    color: #e5e5e5;
+}
+
+button{
+    margin-top: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social{
+    font-size: 1.3em;
+    margin-top: 15px;
+    display: flex;
+}
+
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  background-color: #eaf0fb;
+  text-align: center;
+}
+
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+
+.social #harmoon-text {
+    margin: auto;
+}
+

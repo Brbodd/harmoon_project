@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth import login
 
 from reservation_module.models import Reservation
-from .forms import RegisterForm
+from .forms import RegisterForm, LoginForm
 from .models import User
 
 
@@ -22,6 +22,38 @@ class AccountView(TemplateView):
         context["reservations"] = reservations
 
         return context
+
+
+class LoginView(View):
+
+    def get(self, request):
+
+        login_form = LoginForm()
+
+        context = {
+            'login_form': login_form
+        }
+
+        return render(
+            request,
+            'account_module/login.html',
+            context
+        )
+
+    def post(self, request):
+
+        login_form = LoginForm(request.POST)
+
+        context = {
+            'login_form': login_form
+        }
+
+        return render(
+            request,
+            'account_module/login.html',
+            context
+        )
+
 
 
 class RegisterView(View):

@@ -1,13 +1,15 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Login Harmoon Barber</title>
-    <link rel='stylesheet' href='{% static "account_module/css/register.css" %}'>
+    <link rel='stylesheet' href='{% static "account_module/css/login.css" %}'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link crossorigin='anonymous' rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body dir='rtl'>
     <div class="background">
         <div class="shape"></div>
@@ -15,15 +17,13 @@
     </div>
     <form action='{% url "register-page" %}' method="POST">
         {% csrf_token %}
-        <h3> ثبت نام </h3>
+        <h3>ورود  </h3>
         <div class='form-1'>
-            {{ register_form.full_name.label_tag}}
-            {{ register_form.full_name}}
-            {{ register_form.full_name.errors }}
 
-            {{ register_form.phone_number.label_tag }}
-            {{ register_form.phone_number}}
-            {{ register_form.phone_number.errors }}
+            {{ login_form.phone_number.label_tag }}
+            {{ login_form.phone_number}}
+            {{ login_form.phone_number.errors }}
+
         </div>
         <button>تايید</button>
 

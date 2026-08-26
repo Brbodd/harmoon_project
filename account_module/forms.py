@@ -3,6 +3,7 @@ from django.core import validators
 
 
 class RegisterForm(forms.Form):
+
     full_name = forms.CharField(
         label='نام و نام خانوادگی',
         validators=[
@@ -14,4 +15,23 @@ class RegisterForm(forms.Form):
         validators=[
             validators.MaxLengthValidator(11),
             validators.MinLengthValidator(11)
-        ])
+        ],
+        error_messages={
+            'max_length':'شماره تلفن باید ۱۱ رقمی باشد.',
+            'min_length':'شماره تلفن باید ۱۱ رقمی باشد.'
+        }
+    )
+
+class LoginForm(forms.Form):
+
+    phone_number = forms.CharField(
+        label='شماره تلفن',
+        validators=[
+            validators.MaxLengthValidator(11),
+            validators.MinLengthValidator(11)
+        ],
+        error_messages={
+            'max_length':'شماره تلفن باید ۱۱ رقمی باشد.',
+            'min_length':'شماره تلفن باید ۱۱ رقمی باشد.'
+        }
+    )
