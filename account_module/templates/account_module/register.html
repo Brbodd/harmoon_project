@@ -13,18 +13,26 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form action='{% url "register-page" %}' method="POST">
+        {% csrf_token %}
         <h3>ورود | ثبت نام </h3>
+        <div class='form-1'>
+            {{ register_form.full_name.label_tag}}
+            {{ register_form.full_name}}
+            {{ register_form.full_name.errors }}
 
-        {{ register_form.full_name.label_tag}}
-        {{ register_form.full_name}}
-
-        {{ register_form.phone_number.label_tag }}
-        {{ register_form.phone_number}}
-
+            {{ register_form.phone_number.label_tag }}
+            {{ register_form.phone_number}}
+            {{ register_form.phone_number.errors }}
+        </div>
         <button>تايید</button>
+
         <div class="social">
-            <p id='harmoon-text'> <a href='{% url "Harmoon-Home" %}'> Harmoon Menstyle </a> </p>
+            <p id='harmoon-text'>
+                <a href='{% url "Harmoon-Home" %}'>
+                    Harmoon Menstyle
+                </a>
+            </p>
         </div>
     </form>
 </body>
