@@ -15,9 +15,9 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action='{% url "register-page" %}' method="POST">
+    <form action='{% url "login-page" %}' method="POST">
         {% csrf_token %}
-        <h3>ورود  </h3>
+        <h3> ورود </h3>
         <div class='form-1'>
 
             {{ login_form.phone_number.label_tag }}
@@ -25,7 +25,7 @@
             {{ login_form.phone_number.errors }}
 
         </div>
-        <button>تايید</button>
+        <button> ورود </button>
 
         <div class="social">
             <p id='harmoon-text'>

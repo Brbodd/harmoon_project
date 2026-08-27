@@ -98,6 +98,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'account_module.User'
 
+LOGIN_URL = 'login-page'
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

@@ -2,14 +2,15 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
 from django.views.generic import TemplateView
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from reservation_module.models import Reservation
 from .forms import RegisterForm, LoginForm
 from .models import User
 
 
-class AccountView(TemplateView):
+class AccountView(LoginRequiredMixin, TemplateView):
     template_name = "account_module/account.html"
 
     def get_context_data(self, **kwargs):
@@ -43,6 +44,28 @@ class LoginView(View):
     def post(self, request):
 
         login_form = LoginForm(request.POST)
+
+        if login_form.is_valid():
+
+            user_phone_number = login_form.cleaned_data.get('phone_number')
+
+            user: User = User.objects.filter(
+                phone_number=user_phone_number
+            ).first()
+
+            if user is not None:
+
+                login(request, user)
+
+                return redirect(reverse('Harmoon-Home'))
+
+            else:
+                login_form.add_error(
+                    'phone_number',
+                    'لطفا ابتدا ثبت نام کنید.'
+                    )
+        else:
+            login_form.add_error('phone_number', 'کاربری یافت نشد.')
 
         context = {
             'login_form': login_form
@@ -122,3 +145,11 @@ class RegisterView(View):
             'account_module/register.html',
             context
         )
+
+class LogoutView(View):
+
+    def get(self, request):
+
+        logout(request)
+        
+        return redirect(reverse('Harmoon-Home'))
