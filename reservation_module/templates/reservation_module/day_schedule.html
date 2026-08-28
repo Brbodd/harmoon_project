@@ -19,13 +19,28 @@
                 {{ jalali_date.month }}/
                 {{ jalali_date.year }}
             </p>
+
             <div class='time-slots'>
                 {% for time in times %}
-                    <a href='' class='time-btn'>
-                        {{ time }}
-                    </a>
+
+                    {% if time in reserved_times %}
+
+                        <span class="time-btn disabled">
+                            {{ time }}
+                        </span>
+
+                    {% else %}
+
+                        <a href="{% url 'create-reservation' date time %}" class="time-btn">
+                            {{ time }}
+                        </a>
+
+                    {% endif %}
+
                 {% endfor %}
             </div>
+
+            <p> {{ now }} </p>
 
         </section>
     </div>

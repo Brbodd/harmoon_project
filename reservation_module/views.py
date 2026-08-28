@@ -1,11 +1,19 @@
+from django.shortcuts import redirect
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import View
+
 from datetime import timedelta
 from django.utils import timezone
 from datetime import datetime
+
+from .models import Reservation
+
 import jdatetime
 
 
 class ReservationView(TemplateView):
+
     template_name = "reservation_module/reservation.html"
 
     def get_context_data(self, **kwargs):
@@ -46,6 +54,7 @@ class ReservationView(TemplateView):
 
         return context
 
+
 class DayScheduleView(TemplateView):
 
     template_name = "reservation_module/day_schedule.html"
@@ -53,27 +62,6 @@ class DayScheduleView(TemplateView):
     def get_context_data(self, **kwargs):
 
         context = super().get_context_data(**kwargs)
-
-        times = [
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-        ]
 
         date = datetime.strptime(
             kwargs["date"],
@@ -84,8 +72,90 @@ class DayScheduleView(TemplateView):
             date=date
         )
 
+        reserved_times = Reservation.objects.filter(
+            date=date
+        ).values_list("time", flat=True)
+
+        reserved_times = [
+            time.strftime("%H:%M")
+            for time in reserved_times
+        ]
+
+        now = timezone.localtime()
+        today = timezone.localdate()
+
+        times = self.get_available_times(
+            date,
+            today,
+            now
+        )
+
         context["times"] = times
         context["date"] = kwargs["date"]
         context["jalali_date"] = jalali_date
+        context["reserved_times"] = reserved_times
+        context["now"] = now
 
         return context
+
+    def get_available_times(self, date, today, now):
+
+        if date != today:
+            return self.get_all_times()
+
+        return self.get_today_times(now)
+
+    def get_all_times(self):
+
+        times = []
+
+        for hour in range(10, 21):
+            times.append(f"{hour}:00")
+            times.append(f"{hour}:30")
+
+        return times
+
+    def get_today_times(self, now):
+
+        times = []
+
+        start_hour = now.hour
+
+        if now.minute < 30:
+            start_minute = 30
+        else:
+            start_hour += 1
+            start_minute = 0
+
+        for hour in range(start_hour, 21):
+
+            if hour == start_hour and start_minute == 30:
+                times.append(f"{hour}:30")
+            else:
+                times.append(f"{hour}:00")
+                times.append(f"{hour}:30")
+
+        return times
+
+
+class CreateReservationView(LoginRequiredMixin, View):
+
+    def get(self, request, date, time):
+
+        date = datetime.strptime(
+            date,
+            "%Y-%m-%d"
+        ).date()
+
+        time = datetime.strptime(
+            time,
+            "%H:%M"
+        ).time()
+
+        Reservation.objects.create(
+            user=request.user,
+            date=date,
+            time=time
+        )
+
+        return redirect("reservation")

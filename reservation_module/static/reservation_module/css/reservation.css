@@ -129,12 +129,7 @@
     font-size: 1.3em;
     color: var(--white);
     text-decoration: none;
-    background: linear-gradient(
-    90deg,
-    #050505 0%,
-    #050505 30%,
-    rgba(0, 113, 64, 0.3) 100%
-    );
+    background-color: var(--black);
     margin: 15px;
     padding-block: 15px;
     border: 1px solid var(--black);
@@ -143,13 +138,14 @@
     border-radius: 5px;
     box-shadow: 0 0 10px var(--black),
     inset 0 0 50px var(--black);
-    transition: all 1s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .day-btn:hover {
-  color: var(--light-green);
-  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6),
-    0 0 9px 3px rgba(27, 253, 156, 0.2);
+    color: var(--light-green);
+    border: 1px solid var(--white);
+    box-shadow: inset 0 0 50px rgba(0, 255, 145, 0.6),
+        0 0 3px 1px var(--white);
 }
 
 
