@@ -6,8 +6,10 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from reservation_module.models import Reservation
-from .forms import RegisterForm, LoginForm
-from .models import User
+from .forms import RegisterForm, LoginForm, PhoneNumberVerificationForm
+from .models import User, PhoneVerification
+from .services import sms_verify
+
 
 
 class AccountView(LoginRequiredMixin, TemplateView):
@@ -55,9 +57,7 @@ class LoginView(View):
 
             if user is not None:
 
-                login(request, user)
-
-                return redirect(reverse('Harmoon-Home'))
+                return redirect(reverse('phone-verify-page'))
 
             else:
                 login_form.add_error(
@@ -76,7 +76,6 @@ class LoginView(View):
             'account_module/login.html',
             context
         )
-
 
 
 class RegisterView(View):
@@ -121,19 +120,13 @@ class RegisterView(View):
 
             else:
 
-                new_user = User(
-                    username=user_phone_number,
-                    phone_number=user_phone_number,
-                    first_name=user_full_name
-                )
+                request.session["register_phone_number"] = user_phone_number
+                request.session["register_full_name"] = user_full_name
 
-                new_user.set_unusable_password()
-                new_user.save()
-
-                login(request, new_user)
+                sms_verify(user_phone_number)
 
                 return redirect(
-                    reverse('Harmoon-Home')
+                    reverse("phone-verify-page")
                 )
 
         context = {
@@ -146,6 +139,7 @@ class RegisterView(View):
             context
         )
 
+
 class LogoutView(View):
 
     def get(self, request):
@@ -153,3 +147,81 @@ class LogoutView(View):
         logout(request)
         
         return redirect(reverse('Harmoon-Home'))
+
+
+class PhoneNumberVerificationView(TemplateView):
+
+    template_name = "account_module/number_verify.html"
+
+    def post(self, request):
+
+        phone_number_form = PhoneNumberVerificationForm(
+            request.POST
+        )
+
+        if phone_number_form.is_valid():
+
+            code = (
+                phone_number_form.cleaned_data["code_input_1"]
+                + phone_number_form.cleaned_data["code_input_2"]
+                + phone_number_form.cleaned_data["code_input_3"]
+                + phone_number_form.cleaned_data["code_input_4"]
+                + phone_number_form.cleaned_data["code_input_5"]
+            )
+
+            phone_number = request.session.get(
+                "register_phone_number"
+            )
+
+            verification = PhoneVerification.objects.filter(
+                phone_number=phone_number,
+                code=code
+            ).last()
+
+            if verification:
+
+                full_name = request.session.get(
+                    "register_full_name"
+                )
+
+                user = User.objects.create(
+                    username=phone_number,
+                    phone_number=phone_number,
+                    first_name=full_name
+                )
+
+                user.set_unusable_password()
+                user.save()
+
+                login(request, user)
+
+                request.session.pop(
+                    "register_phone_number",
+                    None
+                )
+
+                request.session.pop(
+                    "register_full_name",
+                    None
+                )
+
+                verification.delete()
+
+                return redirect(
+                    reverse("Harmoon-Home")
+                )
+
+            phone_number_form.add_error(
+                None,
+                "کد وارد شده صحیح نیست."
+            )
+
+        context = {
+            "phone_number_form": phone_number_form
+        }
+
+        return render(
+            request,
+            self.template_name,
+            context
+        )

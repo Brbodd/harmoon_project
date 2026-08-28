@@ -35,3 +35,32 @@ class LoginForm(forms.Form):
             'min_length':'شماره تلفن باید ۱۱ رقمی باشد.'
         }
     )
+
+
+
+class PhoneNumberVerificationForm(forms.Form):
+
+    code_input_1 = forms.CharField(
+        max_length=1,
+        min_length=1
+    )
+
+    code_input_2 = forms.CharField(
+        max_length=1,
+        min_length=1
+    )
+
+    code_input_3 = forms.CharField(
+        max_length=1,
+        min_length=1
+    )
+
+    code_input_4 = forms.CharField(
+        max_length=1,
+        min_length=1
+    )
+
+    code_input_5 = forms.CharField(
+        max_length=1,
+        min_length=1
+    )

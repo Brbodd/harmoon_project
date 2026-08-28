@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Harmoon Barber</title>
+    <link rel='stylesheet' href='{% static "account_module/css/number_verify.css" %}'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link crossorigin='anonymous' rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <script src="{% static 'account_module/js/number_verify.js' %}" defer></script>
+</head>
+
+<body dir='rtl'>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action='{% url "login-page" %}' method="POST">
+        {% csrf_token %}
+        <h3> تايید شماره تلفن </h3>
+        <div class="input-field" dir="ltr">
+            <input type="number" id="" class="code-input" maxlength="1" inputmode="numeric"/>
+            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
+            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
+            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
+            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
+        </div>
+
+        <button action='{% url "phone-verify-page" %}' method="POST"> تایید </button>
+
+        <div class="social">
+            <p id='harmoon-text'>
+                <a href='{% url "Harmoon-Home" %}'>
+                    Harmoon Menstyle
+                </a>
+            </p>
+        </div>
+    </form>
+</body>
+</html>

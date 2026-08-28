@@ -122,3 +122,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SMSIR_API_KEY = "KkBJTluZXbIrmC5ewUVsgVasuH27GPl6x6Htt9rw8MVVOfrQ"
+#PN1TVeBeaAehFLJAKU4XdfpsFXsQguYfleO0bV4ceh6diTZid2hRXza3uSkBbDef
+SMSIR_LINE_NUMBER = "YOUR_LINE_NUMBER"
+SMSIR_TEMPLATE_ID = 12345
