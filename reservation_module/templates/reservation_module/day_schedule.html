@@ -14,7 +14,11 @@
     <div class='main-box glass'>
         <section>
             <p class='label flex-center'> تایم مورد نظر خود را انتخاب کنید: </p>
-            <p class='day-name flex-center'>- {{ date }} -</p>
+            <p class='day-name flex-center'>
+                {{ jalali_date.day }}/
+                {{ jalali_date.month }}/
+                {{ jalali_date.year }}
+            </p>
             <div class='time-slots'>
                 {% for time in times %}
                     <a href='' class='time-btn'>
@@ -22,6 +26,7 @@
                     </a>
                 {% endfor %}
             </div>
+
         </section>
     </div>
 </div>

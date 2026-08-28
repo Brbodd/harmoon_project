@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
 from datetime import timedelta
 from django.utils import timezone
+from datetime import datetime
+import jdatetime
 
 
 class ReservationView(TemplateView):
@@ -14,14 +16,30 @@ class ReservationView(TemplateView):
 
         days = []
 
+        week_days = {
+            0: "دوشنبه",
+            1: "سه‌شنبه",
+            2: "چهارشنبه",
+            3: "پنجشنبه",
+            4: "جمعه",
+            5: "شنبه",
+            6: "یکشنبه",
+        }
+
         for i in range(20):
 
             date = today + timedelta(days=i)
 
+            jalali_date = jdatetime.date.fromgregorian(
+                date=date
+            )
+
             days.append({
                 "date": date,
-                "day": date.strftime("%A"),
-                "number": date.day,
+                "day": week_days[date.weekday()],
+                "number": jalali_date.day,
+                "month": jalali_date.month,
+                "year": jalali_date.year,
             })
 
         context["days"] = days
@@ -57,7 +75,17 @@ class DayScheduleView(TemplateView):
             "18:30",
         ]
 
+        date = datetime.strptime(
+            kwargs["date"],
+            "%Y-%m-%d"
+        ).date()
+
+        jalali_date = jdatetime.date.fromgregorian(
+            date=date
+        )
+
         context["times"] = times
         context["date"] = kwargs["date"]
+        context["jalali_date"] = jalali_date
 
         return context
