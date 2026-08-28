@@ -11,9 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%f+sm=9f)rzu@r^jbson5v@cl9+fbxe3^v*pmh!v(3n5-kwj1='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "harmoon-project.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -125,5 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SMSIR_API_KEY = "KkBJTluZXbIrmC5ewUVsgVasuH27GPl6x6Htt9rw8MVVOfrQ"
 #PN1TVeBeaAehFLJAKU4XdfpsFXsQguYfleO0bV4ceh6diTZid2hRXza3uSkBbDef
-SMSIR_LINE_NUMBER = "YOUR_LINE_NUMBER"
+SMSIR_LINE_NUMBER = "30002108034803"
 SMSIR_TEMPLATE_ID = 12345
