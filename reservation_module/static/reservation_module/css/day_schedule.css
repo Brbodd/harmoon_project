@@ -128,11 +128,7 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
-.time-link {
-    text-decoration: none;
-}
-
-.day-time {
+.time-btn {
     font-family: Doran, sans-serif;
     font-size: 1.3em;
     color: var(--white);
@@ -152,7 +148,12 @@
     box-shadow: 0 0 10px var(--black),
     inset 0 0 50px var(--black);
     transition: all 1s ease-in-out;
-    
+}
+
+.time-btn:hover {
+    color: var(--light-green);
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6),
+        0 0 9px 3px rgba(27, 253, 156, 0.2);
 }
 
 @media (max-width:768px) {

@@ -1,34 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load jalali_tags %}
 
 {% block page_title %}
 Book-Harmoon-Appointment
 {% endblock page_title %}
 
 {% block header_references %}
-<link rel='stylesheet' href='{% static "reservation_module/css/reservation.css" %}'>
+    <link rel='stylesheet' href='{% static "reservation_module/css/reservation.css" %}'>
 {% endblock header_references %}
 
 {% block content %}
-<div class='glass flex-center main-section'>
-    <div>
-        <p class='label flex-center'>
-            برای رزرو نوبت یک روز را انتخاب کنید:
-        </p>
-        <div class=''>
-            <div class='day-list'>
+    <div class='glass flex-center main-section'>
+        <div>
+            <p class='label flex-center'>
+                برای رزرو نوبت یک روز را انتخاب کنید:
+            </p>
+            <div class=''>
+                <div class='day-list'>
 
-                {% for day in days %}
-                        <a href="{% url 'reservation-day' day.date %}" class="day-btn">
-                            {{ day.day }}
-                            {{ day.number }}
-                        </a>
-                {% endfor %}
+                    {% for day in days %}
+                            <a href="{% url 'reservation-day' day.date %}" class="day-btn">
+                                {{ day.day }}
+                                {{ day.number }}
+                            </a>
+                    {% endfor %}
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock content %}
 
 {% block footer_references %}
