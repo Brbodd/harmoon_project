@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from reservation_module.models import Reservation
 from .forms import RegisterForm, LoginForm, PhoneNumberVerificationForm
 from .models import User, PhoneVerification
-from .services import send_otp
+from .services import sms_verify
 
 
 
@@ -127,7 +127,7 @@ class RegisterView(View):
                 request.session["register_phone_number"] = user_phone_number
                 request.session["register_full_name"] = user_full_name
 
-                send_otp(user_phone_number)
+                sms_verify.send_otp(user_phone_number)
 
                 return redirect(
                     reverse("phone-verify-page")
