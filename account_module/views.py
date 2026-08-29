@@ -57,7 +57,20 @@ class LoginView(View):
 
             if user is not None:
 
-                request.session["register_phone_number"] = user_phone_number
+                request.session["verify_phone_number"] = user_phone_number
+                request.session["verify_mode"] = "login"
+
+                response = sms_verify.send_otp(user_phone_number)
+
+                if response.status_code == 200:
+                    return redirect(
+                        reverse('phone-verify-page')
+                    )
+
+                login_form.add_error(
+                    'phone_number',
+                    'ارسال کد تأیید با خطا مواجه شد.'
+                )
 
                 return redirect(
                     reverse('phone-verify-page')
@@ -124,8 +137,9 @@ class RegisterView(View):
 
             else:
 
-                request.session["register_phone_number"] = user_phone_number
-                request.session["register_full_name"] = user_full_name
+                request.session["verify_phone_number"] = user_phone_number
+                request.session["verify_full_name"] = user_full_name
+                request.session["verify_mode"] = "register"
 
                 sms_verify.send_otp(user_phone_number)
 
@@ -174,7 +188,7 @@ class PhoneNumberVerificationView(TemplateView):
             )
 
             phone_number = request.session.get(
-                "register_phone_number"
+                "verify_phone_number"
             )
 
             verification = PhoneVerification.objects.filter(
@@ -184,28 +198,45 @@ class PhoneNumberVerificationView(TemplateView):
 
             if verification:
 
-                full_name = request.session.get(
-                    "register_full_name"
+                mode = request.session.get(
+                    "verify_mode"
                 )
 
-                user = User.objects.create(
-                    username=phone_number,
-                    phone_number=phone_number,
-                    first_name=full_name
-                )
+                if mode == "register":
 
-                user.set_unusable_password()
-                user.save()
+                    full_name = request.session.get(
+                        "verify_full_name"
+                    )
+
+                    user = User.objects.create(
+                        username=phone_number,
+                        phone_number=phone_number,
+                        first_name=full_name
+                    )
+
+                    user.set_unusable_password()
+                    user.save()
+
+                else:
+
+                    user = User.objects.get(
+                        phone_number=phone_number
+                    )
 
                 login(request, user)
 
                 request.session.pop(
-                    "register_phone_number",
+                    "verify_phone_number",
                     None
                 )
 
                 request.session.pop(
-                    "register_full_name",
+                    "verify_full_name",
+                    None
+                )
+
+                request.session.pop(
+                    "verify_mode",
                     None
                 )
 

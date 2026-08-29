@@ -188,26 +188,28 @@ form .input-field {
 .input-field input::-webkit-outer-spin-button {
   display: none;
 }
+
 form button {
-  margin-top: 25px;
-  width: 100%;
-  color: #fff;
-  font-size: 1rem;
-  border: none;
-  padding: 9px 0;
-  cursor: pointer;
-  border-radius: 6px;
-  pointer-events: none;
+    margin-top: 25px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    padding: 9px 0;
+    cursor: pointer;
+    border-radius: 6px;
 
-  background: #00bc88;
-  transition: all 0.2s ease;
-}
-
-form button.active {
-  background: #00bc69;
-  pointer-events: auto;
+    background: #00bc88;
+    transition: all 0.2s ease;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
 }
 
 form button:hover {
+    background: #00bc69;
+}
+
+form button.active {
   background: #00bc69;
 }

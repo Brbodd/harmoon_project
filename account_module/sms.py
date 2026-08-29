@@ -1,20 +1,8 @@
-import random
 import requests
-
 from django.conf import settings
 
-from account_module.models import PhoneVerification
 
-
-def send_otp(phone_number):
-
-    code = str(random.randint(10000, 99999))
-
-    PhoneVerification.objects.create(
-        phone_number=phone_number,
-        code=code
-    )
-
+def send_otp(phone_number, template_id, code):
     url = "https://api.sms.ir/v1/send/verify"
 
     headers = {
@@ -25,13 +13,13 @@ def send_otp(phone_number):
 
     data = {
         "Mobile": phone_number,
-        "TemplateId": settings.SMSIR_TEMPLATE_ID,
+        "TemplateId": template_id,
         "Parameters": [
             {
                 "Name": "Code",
-                "Value": code
+                "Value": str(code),
             }
-        ]
+        ],
     }
 
     response = requests.post(
@@ -40,8 +28,5 @@ def send_otp(phone_number):
         json=data,
         timeout=10
     )
-
-    print("SMS STATUS:", response.status_code)
-    print("SMS RESPONSE:", response.text)
 
     return response

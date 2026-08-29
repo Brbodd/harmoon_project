@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link crossorigin='anonymous' rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <script src="{% static 'account_module/js/number_verify.js' %}" defer></script>
+    {% comment %} <script src="{% static 'account_module/js/number_verify.js' %}" defer></script> {% endcomment %}
 </head>
 
 <body dir='rtl'>
@@ -24,13 +24,18 @@
         
         <div class="input-field" dir="ltr">
             <input type="number" name="code_input_1" class="code-input" maxlength="1" inputmode="numeric" required >
-            <input type="number" name="code_input_2" disabled class="code-input" maxlength="1" inputmode="numeric" required >
-            <input type="number" name="code_input_3" disabled class="code-input" maxlength="1" inputmode="numeric" required >
-            <input type="number" name="code_input_4" disabled class="code-input" maxlength="1" inputmode="numeric" required >
-            <input type="number" name="code_input_5" disabled class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_2"  class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_3"  class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_4"  class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_5"  class="code-input" maxlength="1" inputmode="numeric" required >
         </div>
 
-        <button type="submit"> تایید </button>
+        {% comment %} <button type="submit">تایید</button> {% endcomment %}
+        <button
+    type="submit"
+    style="pointer-events: auto !important; position: relative; z-index: 9999;">
+    تایید
+</button>
 
         <div class="social">
             <p id='harmoon-text'>

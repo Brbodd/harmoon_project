@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -132,7 +133,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SMSIR_API_KEY = "PN1TVeBeaAehFLJAKU4XdfpsFXsQguYfleO0bV4ceh6diTZid2hRXza3uSkBbDef"
-#PN1TVeBeaAehFLJAKU4XdfpsFXsQguYfleO0bV4ceh6diTZid2hRXza3uSkBbDef
+
+SMSIR_API_KEY = "KkBJTluZXbIrmC5ewUVsgVasuH27GPl6x6Htt9rw8MVVOfrQ"
 SMSIR_LINE_NUMBER = "30002108034803"
-SMSIR_TEMPLATE_ID = 237059
+SMSIR_TEMPLATE_ID = int(os.environ.get("SMSIR_TEMPLATE_ID", "237059"))
+SMSIR_LINE_NUMBER = 30002108034803
