@@ -16,18 +16,18 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action='{% url "login-page" %}' method="POST">
-        
+    <form action='{% url "phone-verify-page" %}' method="POST">
+        {% csrf_token %}
         <h3> تايید شماره تلفن </h3>
         <div class="input-field" dir="ltr">
-            <input type="number" id="" class="code-input" maxlength="1" inputmode="numeric"/>
-            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
-            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
-            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
-            <input type="number" disabled id="" class="code-input" maxlength="1" inputmode="numeric"/>
+            <input type="number" name="code_input_1" class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_2" disabled class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_3" disabled class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_4" disabled class="code-input" maxlength="1" inputmode="numeric" required >
+            <input type="number" name="code_input_5" disabled class="code-input" maxlength="1" inputmode="numeric" required >
         </div>
 
-        <button action='{% url "phone-verify-page" %}' method="POST"> تایید </button>
+        <button type="submit"> تایید </button>
 
         <div class="social">
             <p id='harmoon-text'>
