@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%f+sm=9f)rzu@r^jbson5v@cl9+fbxe3^v*pmh!v(3n5-kwj1='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "harmoon-project.onrender.com",
