@@ -132,7 +132,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SMSIR_API_KEY = "KkBJTluZXbIrmC5ewUVsgVasuH27GPl6x6Htt9rw8MVVOfrQ"
+SMSIR_API_KEY = "PN1TVeBeaAehFLJAKU4XdfpsFXsQguYfleO0bV4ceh6diTZid2hRXza3uSkBbDef"
 #PN1TVeBeaAehFLJAKU4XdfpsFXsQguYfleO0bV4ceh6diTZid2hRXza3uSkBbDef
 SMSIR_LINE_NUMBER = "30002108034803"
-SMSIR_TEMPLATE_ID = 12345
+SMSIR_TEMPLATE_ID = 237059
