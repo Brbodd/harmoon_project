@@ -17,8 +17,11 @@
         <div class="shape"></div>
     </div>
     <form action='{% url "phone-verify-page" %}' method="POST">
+
         {% csrf_token %}
+
         <h3> تايید شماره تلفن </h3>
+        
         <div class="input-field" dir="ltr">
             <input type="number" name="code_input_1" class="code-input" maxlength="1" inputmode="numeric" required >
             <input type="number" name="code_input_2" disabled class="code-input" maxlength="1" inputmode="numeric" required >

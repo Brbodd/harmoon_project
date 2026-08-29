@@ -57,7 +57,11 @@ class LoginView(View):
 
             if user is not None:
 
-                return redirect(reverse('phone-verify-page'))
+                request.session["register_phone_number"] = user_phone_number
+
+                return redirect(
+                    reverse('phone-verify-page')
+                )
 
             else:
                 login_form.add_error(
