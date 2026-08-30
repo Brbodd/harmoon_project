@@ -154,13 +154,15 @@ class CreateReservationView(LoginRequiredMixin, View):
             "%H:%M"
         ).time()
 
+
+
         if Reservation.objects.filter(
             date=date,
             time=time
         ).exists():
 
             return redirect("reservation")
-         
+
         Reservation.objects.create(
             user=request.user,
             date=date,
@@ -168,13 +170,15 @@ class CreateReservationView(LoginRequiredMixin, View):
         )
 
         try:
+
             send_to_barber.send_booking_sms(
-                full_name=request.user.full_name,
+                full_name=request.user.first_name,
                 phone_number=request.user.phone_number,
                 reserv_date=date,
                 reserv_time=time
             )
+
         except Exception as e:
-            print("SMS ERROR:", e)
+            print("SMS ERROR:", repr(e))
 
         return redirect("reservation")
