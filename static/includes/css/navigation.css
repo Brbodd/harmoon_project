@@ -48,4 +48,8 @@
         justify-content: center;
         text-align: center;
     }
+
+    .nav-item {
+        font-size: 1em;
+    }
 }
