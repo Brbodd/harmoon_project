@@ -1,3 +1,10 @@
+@font-face {
+  font-family: hasti;
+  src: url('/static/fonts/hasti.ttf') format('truetype'),
+  url('/static/fonts/hasti.woff') format('woff');
+}
+
+
 :root {
     --white: #fff;
     --gray: rgb(128, 128, 128, .5);
