@@ -41,7 +41,7 @@ def send_otp(phone_number):
         timeout=10
     )
 
-    print("SMS STATUS:", response.status_code)
-    print("SMS RESPONSE:", response.text)
+    # print("SMS STATUS:", response.status_code)
+    # print("SMS RESPONSE:", response.text)
 
     return response

@@ -20,7 +20,7 @@
 .nav-item {
     display: inline-block;
     font-family: hasti, sans-serif;
-    font-size: clamp(1em, 3vw,2.5em);
+    font-size: clamp(1.5em, 3vw,2.5em);
     position: relative;
     color: var(--black);
     text-decoration: none;
@@ -47,9 +47,5 @@
         display: flex;
         justify-content: center;
         text-align: center;
-    }
-
-    .nav-item {
-        font-size: 1em;
     }
 }
