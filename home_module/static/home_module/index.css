@@ -29,7 +29,7 @@
 
 .titr {
     display: inline-block;
-    /* font-family: Doran, sans-serif; */
+    font-family: Doran, sans-serif;
     font-weight: 800;
     font-size: clamp(1.5rem,4vw,2.2rem);
     color: var(--white);
@@ -45,7 +45,7 @@
 }
 
 .desc {
-    /* font-family: Doran, sans-serif; */
+    font-family: Doran, sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
     text-align: justify;
@@ -74,7 +74,7 @@
     height: 100px;
     text-align: center;
     color: var(--black);
-    /* font-family: Doran, sans-serif; */
+    font-family: Doran, sans-serif;
     padding: 20px;
     border-radius: 10px;
 }
