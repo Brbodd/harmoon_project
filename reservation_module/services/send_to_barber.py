@@ -37,4 +37,8 @@ def send_booking_sms(full_name, phone_number, reserv_date, reserv_time):
         timeout=10
     )
 
+    print("STATUS:", response.status_code)
+    print("RESPONSE:", response.text)
+
+
     return response
